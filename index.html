@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye</title>
-  </head>
-  <body>
-    <header>
-        <img src="assets/images/logo.png" class="logo" alt="fisheye logo"/>
-        <h1>Nos photographes</h1>
-    </header>
-    <main id="main">
-        <div class="photographer_section"></div>
-    </main>
-    <script src="scripts/templates/photographer.js"></script>
-    <script src="scripts/pages/index.js"></script>
-  </body>
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye</title>
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" id="logo" class="logo" aria-label="banner">
+      <img src="./assets/logo/logo.png" alt="logo">
+    </a>
+
+
+    <h2>Nos Photographes</h2>
+  </header>
+  <main id="main">
+    <section id="photograph-list" class="photograph__list__section">
+      <h2 aria-label="photographer list" class="visually-hidden">Liste des photographes</h2>
+    </section>
+  </main>
+  <script src="scripts/templates/photographer.js"></script>
+  <script src="scripts/pages/index.js"></script>
+</body>
+
 </html>
