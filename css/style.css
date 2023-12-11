@@ -26,6 +26,8 @@ a {
 header {
     height: 8vh;
     display: flex;
+    padding-left: 50px;
+    padding-right: 80px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -134,7 +136,7 @@ body {
     width: 200px;
     height: 200px;
     order: none;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
     border-radius: 50%;
 }
 
