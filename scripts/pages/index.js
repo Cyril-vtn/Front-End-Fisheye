@@ -1,23 +1,5 @@
 // This function fetches the photographers data from a JSON file.
-async function getPhotographers() {
-    try {
-        // Fetch the JSON file.
-        const response = await fetch("./data/photographers.json");
-        const data = await response.json();
 
-        // Extract the photographers array from the parsed data.
-        const photographers = data.photographers;
-
-        return ({
-            photographers: [...photographers]
-        })
-    } catch (error) {
-        console.error('Error:', error);
-        return ({
-            photographers: []
-        });
-    }
-}
 // This function displays the photographers data on the webpage.
 async function displayData(photographers) {
     // Select the section where the photographers data will be displayed.
