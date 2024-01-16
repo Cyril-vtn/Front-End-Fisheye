@@ -14,7 +14,7 @@ function createPhotographDetail(photographers, media) {
   function getPhotographDetails() {
     for (let i = 0; i < photographers.length; i++) {
       if (photographers[i].id === idValue) {
-        const photographersData = photographers[i];
+        const photographersData = photographers[i];    
         const header = `
           <div class="header__basic">
             <h1>${photographersData.name}</h1>
@@ -37,7 +37,6 @@ function createPhotographDetail(photographers, media) {
   }
 
   function getPhotographMedia() {
-    console.log(media);
     media.sort((a, b) => b.likes - a.likes)
       .forEach((mediaItem) => {
         if (mediaItem.photographerId === idValue && mediaItem.image) {
