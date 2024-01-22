@@ -6,8 +6,7 @@ function createMediaBuilder(data, name) {
   const video = data.video;
   const alt = `${title}, closeup view”`;
   const photographerName = name.split(" ")[0];
-  const photographerFirstName = photographerName.replace(/-/g, ' ');
-console.log(alt)
+  const photographerFirstName = photographerName.replace(/-/g, " ");
   function getImageCard() {
     const mediaTemplate = document.createElement("article");
     mediaTemplate.classList.add("media__container");
