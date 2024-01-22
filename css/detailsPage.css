@@ -21,7 +21,6 @@ header {
 
 .logo {
   height: 50px;
-  width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +48,7 @@ body {
 .photograph__header {
   height: 313px;
   background-color: #fafafa;
-  padding: 1rem;
+  padding: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,8 +60,7 @@ body {
 }
 
 .photograph__contact__form {
-  position: absolute;
-  left: 40%;
+  margin-top: 60px;
   padding: 22px 11px;
   color: #fff;
   background-color: #901c1c;
@@ -86,6 +84,7 @@ body {
 .header__img {
   width: 200px;
   height: 200px;
+  margin-left: 60px;
 }
 
 .header__img img {
@@ -105,7 +104,7 @@ body {
 
 .header__basic h3 {
   margin: 0;
-  font-weight: 300;
+  font-size: 24px;
 }
 
 .header__basic p {
@@ -164,7 +163,8 @@ body {
 /*****Filter Form******/
 
 .form__media {
-  margin-top: 2rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   position: relative;
@@ -301,13 +301,13 @@ label {
   flex-wrap: wrap;
   position: relative;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   height: 351px;
   width: 350px;
   margin: 1rem 0;
   cursor: pointer;
   border-radius: 5px;
+  gap: 60px;
 }
 
 .media__pricing {
@@ -323,7 +323,19 @@ label {
 
 .media__pricing i {
   margin-left: 0.5rem;
-  font-size: 30px;
+  font-size: 18px;
+}
+
+.media__pricing h3 {
+  color: #901C1C;
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .likes__container {

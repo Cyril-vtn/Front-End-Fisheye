@@ -26,8 +26,6 @@ a {
 header {
     height: 8vh;
     display: flex;
-    padding-left: 50px;
-    padding-right: 80px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -38,13 +36,12 @@ header a {
     color: #901c1c;
 }
 
-header h2 {
+header h1 {
     color: #901c1c;
-    font-size: 2rem;
+    font-size: 36px;
 }
 
 .logo {
-    width: 250px;
     height: 50px;
 }
 
@@ -55,17 +52,19 @@ header h2 {
 
 body {
     font-family: "DM Sans", sans-serif;
-    max-width: 1200px;
+    max-width: 1240px;
     margin: auto;
 }
 
 .photograph__list__section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-    width: 100%;
+    display: grid;
+    margin-top: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 80px 317px;
+    grid-template-areas:
+        ". . ."
+        ". . .";
 }
 
 .tags__section {
@@ -110,7 +109,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 350px;
+    width: 200px;
     padding: 1rem;
 }
 
@@ -120,7 +119,6 @@ body {
     align-items: center;
     flex-direction: column;
     transition: all 330ms;
-    padding: 10px;
 }
 
 .ph__name a:focus {
@@ -130,6 +128,9 @@ body {
 
 .ph__name {
     text-align: center;
+    text-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .ph__container__img {
@@ -156,9 +157,8 @@ body {
 
 .ph__name {
     color: #d3573c;
-    font-size: 2rem;
+    font-size: 36px;
     font-weight: normal;
-    margin-bottom: 0.5rem;
 }
 
 .ph__location {
@@ -167,7 +167,9 @@ body {
     font-weight: normal;
     margin-bottom: 0.25rem;
 }
-
+.ph__location h3 {
+    font-size: 13px;
+}
 .ph__tags {
     display: flex;
     flex-wrap: wrap;
@@ -186,6 +188,9 @@ body {
     text-align: center;
     font-size: 10px;
     margin-bottom: 0.2rem;
+    text-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .ph__price {
