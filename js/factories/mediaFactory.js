@@ -10,7 +10,7 @@ function createMediaBuilder(data, name) {
   function getImageCard() {
     const mediaTemplate = document.createElement("article");
     mediaTemplate.classList.add("media__container");
-
+    
     const mediaSection = `
           <div  id="media-${id}" onclick="lightBoxOpen(id,'${title}')" class="media__box">
           <img tabindex="0" id="focus-${id}" onkeypress="lightBoxOnPress(id,'${title}')" class="focusable-media" src="assets/${photographerFirstName}/${image}" alt="${alt}" />
