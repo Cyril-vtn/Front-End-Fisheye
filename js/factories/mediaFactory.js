@@ -10,17 +10,17 @@ function createMediaBuilder(data, name) {
   function getImageCard() {
     const mediaTemplate = document.createElement("article");
     mediaTemplate.classList.add("media__container");
-    
+
     const mediaSection = `
-          <div  id="media-${id}" onclick="lightBoxOpen(id,'${title}')" class="media__box">
-          <img tabindex="0" id="focus-${id}" onkeypress="lightBoxOnPress(id,'${title}')" class="focusable-media" src="assets/${photographerFirstName}/${image}" alt="${alt}" />
+          <div  tabindex="0" id="media-${id}" onclick="lightBoxOpen(id,'${title}')" onkeypress="lightBoxOpen(id,'${title}')" class="media__box">
+          <img  id="focus-${id}"  class="focusable-media" src="assets/${photographerFirstName}/${image}" alt="${alt}" />
           <h3 class="media__title">${title}</h3>
           </div>
           <div class="media__pricing"> 	
           <h3>${title}</h3>
-          <div id="${id}" class="likes__container">
+          <div id="${id}" class="likes__container" aria-label="likes">
           <p class="num__likes">${likes}</p> 
-          <button onclick="incrementLikes(${likes},${id})" role="increment" aria-label="likes"> <i class="fas fa-heart"></i></button>
+          <button onclick="incrementLikes(${likes},${id})" role="increment"> <i class="fas fa-heart"></i></button>
           </div>
           </div>
       `;
@@ -35,7 +35,7 @@ function createMediaBuilder(data, name) {
 
     const mediaSection = `
           <div id="media-${id}" onclick="lightBoxOpen(id,'${title}')" class="media__box">
-          <video tabindex="0" id="focus-${id}" onkeypress="lightBoxOnPress(id,'${title}')" src="assets/${photographerFirstName}/${video}" type="video/mp4" alt="${title}" class="focusable-media" />
+          <video tabindex="0" id="focus-${id}" onkeypress="lightBoxOpen(id,'${title}')" src="assets/${photographerFirstName}/${video}" type="video/mp4" alt="${title}" class="focusable-media" />
           <h3 class="media__title">${title}</h3>
           </div>
           <div class="media__pricing"> 	

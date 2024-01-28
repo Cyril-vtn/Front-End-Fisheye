@@ -1,20 +1,21 @@
 function createPhotographDetail(photographers, media) {
-  const headerDetailSection = document.querySelector('.photograph__header');
-  const mediaSectionContainer = document.querySelector('.photograph__media');
-  const lightBoxGallery = document.querySelector('.lightbox__gallery');
+  const headerDetailSection = document.querySelector(".photograph__header");
+  const mediaSectionContainer = document.querySelector(".photograph__media");
+  const lightBoxGallery = document.querySelector(".lightbox__gallery");
 
   const url = window.location.search;
   const params = new URLSearchParams(url);
-  const idItem = params.get('id');
+  const idItem = params.get("id");
   const idValue = parseInt(idItem);
-  const photographer = photographers.find(photographer => photographer.id === idValue);
+  const photographer = photographers.find(
+    (photographer) => photographer.id === idValue
+  );
   const photographName = photographer.name;
-
 
   function getPhotographDetails() {
     for (let i = 0; i < photographers.length; i++) {
       if (photographers[i].id === idValue) {
-        const photographersData = photographers[i];    
+        const photographersData = photographers[i];
         const header = `
           <div class="header__basic">
             <h1>${photographersData.name}</h1>
@@ -23,7 +24,7 @@ function createPhotographDetail(photographers, media) {
             </div>
             <p class="header__tagline">${photographersData.tagline}</p>
           </div>
-          <div tabindex="0" class="photograph__contact__form" onkeypress=handleModal() onclick=handleModal()>
+          <div role="button" tabindex="0" class="photograph__contact__form" onkeypress=handleModal() onclick=handleModal()>
             Contactez-moi
           </div>
           <div class="header__img">
@@ -37,14 +38,21 @@ function createPhotographDetail(photographers, media) {
   }
 
   function getPhotographMedia() {
-    media.sort((a, b) => b.likes - a.likes)
+    media
+      .sort((a, b) => b.likes - a.likes)
       .forEach((mediaItem) => {
         if (mediaItem.photographerId === idValue && mediaItem.image) {
-          const mediaTemplateItem = createMediaBuilder(mediaItem, photographName);
+          const mediaTemplateItem = createMediaBuilder(
+            mediaItem,
+            photographName
+          );
           const imageCard = mediaTemplateItem.getImageCard();
           mediaSectionContainer.appendChild(imageCard);
         } else if (mediaItem.photographerId === idValue && mediaItem.video) {
-          const mediaTemplateItem = createMediaBuilder(mediaItem, photographName);
+          const mediaTemplateItem = createMediaBuilder(
+            mediaItem,
+            photographName
+          );
           const videoCard = mediaTemplateItem.getVideoCard();
           mediaSectionContainer.appendChild(videoCard);
         }
@@ -53,6 +61,6 @@ function createPhotographDetail(photographers, media) {
 
   return {
     getPhotographDetails,
-    getPhotographMedia
+    getPhotographMedia,
   };
 }

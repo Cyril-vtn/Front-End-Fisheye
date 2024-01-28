@@ -27,14 +27,14 @@
   <!-- FILTER MEDIA FORM -->
   <div class="form__media">
     <label>Trier par </label>
-    <div role="navigation" class="select__wrapper">
+    <div role="button" class="select__wrapper" aria-haspopup="listbox" aria-expanded>
       <div class="select">
-        <div tabindex="0" class="select__trigger">
+        <div tabindex="0" class="select__trigger" aria-selected="true" >
           <span>Popularité</span>
           <div class="fa fa-chevron-down" id="arrow-down"></div>
           <div class="fa fa-chevron-up hidden" id="arrow-up"></div>
         </div>
-        <div class="custom__options">
+        <div class="custom__options" role=”listbox aria-activedescendant="likes" aria-selected="false" aria-labelledby="Popularité">
           <div class="hidden custom__option" id="likes" data-value="title" tabindex="0">
             <span class="custom__option_text_container" id="likes">
               <span class="custom__option_text" id="likes">
@@ -42,14 +42,14 @@
               </span>
             </span>
           </div>
-          <div class="custom__option" id="date" data-value="date" tabindex="0">
+          <div class="custom__option" id="date" data-value="date" tabindex="0" role=”listbox aria-activedescendant="date" aria-selected="false" aria-labelledby="Date">
             <span class="custom__option_text_container" id="date">
               <span class="custom__option_text" id="date">
                 Date
               </span>
             </span>
           </div>
-          <div class="custom__option" id="title" data-value="title" tabindex="0">
+          <div class="custom__option" id="title" data-value="title" tabindex="0" role=”listbox aria-activedescendant="title" aria-selected="false" aria-labelledby="Titre">
             <span class="custom__option_text_container" id="title">
               <span class="custom__option_text" id="title">
                 Titre
