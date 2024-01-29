@@ -1,0 +1,3 @@
+# Ignorer les réperto node_modules et bower_components
+node_modules/
+bower_components/
