@@ -1,15 +1,17 @@
 // Function to create filter for media
 async function createFilter(media) {
   // Select the media container and get the URL parameters
-  const mediaContainer = document.querySelector('.photograph__media');
+  const mediaContainer = document.querySelector(".photograph__media");
   const url = window.location.search;
   const params = new URLSearchParams(url);
-  const idItem = params.get('id');
+  const idItem = params.get("id");
   const idValue = parseInt(idItem);
 
   // Fetch media data and find the current photographer
   const { photographers } = await getMedia();
-  const photographer = photographers.find(photographer => photographer.id === idValue);
+  const photographer = photographers.find(
+    (photographer) => photographer.id === idValue
+  );
   const photographName = photographer.name;
 
   // Filter media by photographer ID
@@ -18,7 +20,9 @@ async function createFilter(media) {
   // Function to create a media card
   function createMediaCard(res) {
     const filteredMedia = new createMediaBuilder(res, photographName);
-    const filteredCard = res.image ? filteredMedia.getImageCard() : filteredMedia.getVideoCard();
+    const filteredCard = res.image
+      ? filteredMedia.getImageCard()
+      : filteredMedia.getVideoCard();
     mediaContainer.appendChild(filteredCard);
   }
 
@@ -49,31 +53,31 @@ async function createFilter(media) {
 
   // Function to handle filter changes
   function onChangeFilter() {
-    const filterWrapper = document.querySelector('.custom__options');
-    filterWrapper.addEventListener('click', (e) => {
+    const filterWrapper = document.querySelector(".custom__options");
+    filterWrapper.addEventListener("click", (e) => {
       switch (e.target.id) {
-        case 'date':
+        case "date":
           filterByDate();
           break;
-        case 'likes':
+        case "likes":
           filterByPopularity();
           break;
-        case 'title':
+        case "title":
           filterByTitle();
           break;
       }
     });
 
     // Also handle filter changes on keypress
-    filterWrapper.addEventListener('keypress', (e) => {
+    filterWrapper.addEventListener("keypress", (e) => {
       switch (e.target.id) {
-        case 'date':
+        case "date":
           filterByDate();
           break;
-        case 'likes':
+        case "likes":
           filterByPopularity();
           break;
-        case 'title':
+        case "title":
           filterByTitle();
           break;
       }
@@ -82,7 +86,7 @@ async function createFilter(media) {
 
   // Function to clear the media container
   function clearMedia() {
-    mediaContainer.innerHTML = '';
+    mediaContainer.innerHTML = "";
   }
 
   // Return the filter functions
@@ -91,6 +95,6 @@ async function createFilter(media) {
     filterByPopularity,
     filterByTitle,
     onChangeFilter,
-    clearMedia
+    clearMedia,
   };
 }
