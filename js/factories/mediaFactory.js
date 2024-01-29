@@ -5,8 +5,11 @@ function createMediaBuilder(data, name) {
   const image = data.image;
   const video = data.video;
   const alt = `${title}, closeup view”`;
+
   const photographerName = name.split(" ")[0];
   const photographerFirstName = photographerName.replace(/-/g, " ");
+
+  // Returns an image card template.
   function getImageCard() {
     const mediaTemplate = document.createElement("article");
     mediaTemplate.classList.add("media__container");
@@ -29,6 +32,7 @@ function createMediaBuilder(data, name) {
     return mediaTemplate;
   }
 
+  // Returns a video card template.
   function getVideoCard() {
     const mediaTemplate = document.createElement("article");
     mediaTemplate.classList.add("media__container");
