@@ -1,7 +1,6 @@
 function createPhotographDetail(photographers, media) {
   const headerDetailSection = document.querySelector(".photograph__header");
   const mediaSectionContainer = document.querySelector(".photograph__media");
-  const lightBoxGallery = document.querySelector(".lightbox__gallery");
 
   const url = window.location.search;
   const params = new URLSearchParams(url);

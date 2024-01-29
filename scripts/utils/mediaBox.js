@@ -72,7 +72,6 @@ function lightBoxOpen(id, title) {
       mediaTitle.textContent = titleData;
     } else {
       const vidSrc = mediaEl.children[0].src;
-      console.log(mediaEl.children[0]);
       const titleData = mediaEl.children[0].textContent;
 
       const videoData = `
