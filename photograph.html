@@ -1,151 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/detailsPage.css" type="text/css" />
+    <title>Fisheye - photographe</title>
+  </head>
 
-<head>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <meta charset="utf-8">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/detailsPage.css" type="text/css">
-  <title>Fisheye - photographe </title>
-</head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">
+        <img src="./assets/logo/logo.png" alt="Fisheye Home page" />
+      </a>
+    </header>
 
-<body>
-  <header>
-    <a href="index.html" class="logo">
-      <img src="./assets/logo/logo.png" alt="Fisheye Home page">
-    </a>
-  </header>
+    <!-- PHOTOGRAPH BRIEF INFO 1 CONTACT FORM -->
+    <section class="photograph__header">
+      <h2 aria-label="photograph header and details" class="visually-hidden">
+        Photograph Basic Details
+      </h2>
+    </section>
 
-  <!-- PHOTOGRAPH BRIEF INFO 1 CONTACT FORM -->
-  <section class="photograph__header">
-    <h2 aria-label="photograph header and details" class="visually-hidden">Photograph Basic Details</h2>
-  </section>
-
-  <!-- FILTER MEDIA FORM -->
-  <div class="form__media">
-    <label>Trier par </label>
-    <div role="button" class="select__wrapper" aria-haspopup="listbox" aria-expanded>
-      <div class="select">
-        <div tabindex="0" class="select__trigger" aria-selected="true" >
-          <span>Popularité</span>
-          <div class="fa fa-chevron-down" id="arrow-down"></div>
-          <div class="fa fa-chevron-up hidden" id="arrow-up"></div>
-        </div>
-        <div class="custom__options" role=”listbox aria-activedescendant="likes" aria-selected="false" aria-labelledby="Popularité">
-          <div class="hidden custom__option" id="likes" data-value="title" tabindex="0">
-            <span class="custom__option_text_container" id="likes">
-              <span class="custom__option_text" id="likes">
-                Popularité
-              </span>
-            </span>
+    <!-- FILTER MEDIA FORM -->
+    <div class="form__media">
+      <label>Trier par </label>
+      <div
+        role="button"
+        class="select__wrapper"
+        aria-haspopup="listbox"
+        aria-expanded
+      >
+        <div class="select">
+          <div tabindex="0" class="select__trigger" aria-selected="true">
+            <span>Popularité</span>
+            <div class="fa fa-chevron-down" id="arrow-down"></div>
+            <div class="fa fa-chevron-up hidden" id="arrow-up"></div>
           </div>
-          <div class="custom__option" id="date" data-value="date" tabindex="0" role=”listbox aria-activedescendant="date" aria-selected="false" aria-labelledby="Date">
-            <span class="custom__option_text_container" id="date">
-              <span class="custom__option_text" id="date">
-                Date
+          <div
+            class="custom__options"
+            role="”listbox"
+            aria-activedescendant="likes"
+            aria-selected="false"
+            aria-labelledby="Popularité"
+          >
+            <div
+              class="hidden custom__option"
+              id="likes"
+              data-value="title"
+              tabindex="0"
+            >
+              <span class="custom__option_text_container">
+                <span class="custom__option_text"> Popularité </span>
               </span>
-            </span>
-          </div>
-          <div class="custom__option" id="title" data-value="title" tabindex="0" role=”listbox aria-activedescendant="title" aria-selected="false" aria-labelledby="Titre">
-            <span class="custom__option_text_container" id="title">
-              <span class="custom__option_text" id="title">
-                Titre
+            </div>
+            <div
+              class="custom__option"
+              id="date"
+              data-value="date"
+              tabindex="0"
+              role="”listbox"
+              aria-activedescendant="date"
+              aria-selected="false"
+              aria-labelledby="Date"
+            >
+              <span class="custom__option_text_container">
+                <span class="custom__option_text"> Date </span>
               </span>
-            </span>
+            </div>
+            <div
+              class="custom__option"
+              id="title"
+              data-value="title"
+              tabindex="0"
+              role="”listbox"
+              aria-activedescendant="title"
+              aria-selected="false"
+              aria-labelledby="Titre"
+            >
+              <span class="custom__option_text_container">
+                <span class="custom__option_text"> Titre </span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--  -->
+    <!--  -->
 
-  <!-- MEDIA DISPLAY -->
-  <section class="photograph__media">
-    <h2 class="visually-hidden" aria-label="media content">Media</h2>
-  </section>
+    <!-- MEDIA DISPLAY -->
+    <section class="photograph__media">
+      <h2 class="visually-hidden" aria-label="media content">Media</h2>
+    </section>
 
-  <!-- Lightbox Section -->
-  <section class="lightbox" aria-hidden="true">
-    <h2 class="visually-hidden" aria-label="lighbox content">Lightgox Content</h2>
-    <div class="lightbox__container" id="lightbox__container">
-    </div>
-  </section>
+    <!-- Lightbox Section -->
+    <section class="lightbox" aria-hidden="true">
+      <h2 class="visually-hidden" aria-label="lighbox content">
+        Lightgox Content
+      </h2>
+      <div class="lightbox__container" id="lightbox__container"></div>
+    </section>
 
+    <!-- Modal Section -->
+    <section class="modal">
+      <h2 class="visually-hidden" aria-label="modal content">Modal</h2>
+    </section>
 
-  <!-- Modal Section -->
-  <section class="modal">
-    <h2 class="visually-hidden" aria-label="modal content">Modal</h2>
-  </section>
+    <div class="bground__modal">
+      <div class="content__modal">
+        <div class="modal__header">
+          <div class="contact__ph">
+            <h2>Contactez-Moi</h2>
+            <span class="close__modal" onclick="closeModal()"
+              ><strong class="fa fa-times"></strong
+            ></span>
+          </div>
 
-  <div class="bground__modal">
-    <div class="content__modal">
-      <div class="modal__header">
-        <div class="contact__ph">
-          <h2>
-            Contactez-Moi
-          </h2>
-          <span class="close__modal" onclick=closeModal()><i class="fa fa-times"></i></span>
+          <div class="ph__name__modal"></div>
         </div>
 
-        <div class="ph__name__modal"></div>
+        <div class="modal_body">
+          <form action="index.html" method="get" id="submit">
+            <div class="formData" id="firstname">
+              <label for="first">Prénom</label>
+              <input
+                tabindex="1"
+                class="text__control"
+                data-error=""
+                data-error-visible="false"
+                type="text"
+                name="first"
+                id="first"
+              />
+            </div>
+
+            <div class="formData" id="lastname">
+              <label for="last">Nom</label>
+              <input
+                tabindex="2"
+                class="text__control"
+                data-error=""
+                data-error-visible="false"
+                type="text"
+                name="last"
+                id="last"
+              />
+            </div>
+
+            <div class="formData" id="email-data">
+              <label for="email">Email</label>
+              <input
+                tabindex="3"
+                class="text__control"
+                data-error=""
+                data-error-visible="false"
+                type="email"
+                name="email"
+                id="email"
+              />
+            </div>
+
+            <div class="formData" id="message-data">
+              <label for="message">Votre message</label>
+              <textarea
+                tabindex="4"
+                class="text__control"
+                maxlength="250"
+                cols="50"
+                data-error=""
+                data-error-visible="false"
+                name="message"
+                id="message"
+              ></textarea>
+            </div>
+
+            <input
+              tabindex="5"
+              id="btn"
+              class="submit__btn"
+              type="submit"
+              value="Envoyer"
+            />
+          </form>
+        </div>
+        <span id="confirmation__msg"></span>
       </div>
-
-      <div class="modal_body">
-        <form action="index.html" method="get" id="submit">
-          <div class="formData" id="firstname">
-            <label for="first">Prénom</label>
-            <input tabindex="1" class="text__control" data-error="" data-error-visible="false" type="text" name="first"
-              id="first" />
-          </div>
-
-          <div class="formData" id="lastname">
-            <label for="last">Nom</label>
-            <input tabindex="2" class="text__control" data-error="" data-error-visible="false" type="text" name="last"
-              id="last" />
-          </div>
-
-          <div class="formData" id="email-data">
-            <label for="email">Email</label>
-            <input tabindex="3" class="text__control" data-error="" data-error-visible="false" type="email" name="email"
-              id="email" />
-          </div>
-
-          <div class="formData" id="message-data">
-            <label for="message">Votre message</label>
-            <textarea tabindex="4" class="text__control" maxlength="250" cols="50" data-error=""
-              data-error-visible="false" name="message" id="message"></textarea>
-          </div>
-
-          <input tabindex="5" id="btn" class="submit__btn" type="submit" value="Envoyer">
-        </form>
-      </div>
-      <span id="confirmation__msg"></span>
-
     </div>
-  </div>
-  <!--  -->
+    <!--  -->
 
-  <!-- LIKES COUNTER AND PRICE/HOUR -->
-  <div class="counter__bg"></div>
+    <!-- LIKES COUNTER AND PRICE/HOUR -->
+    <div class="counter__bg"></div>
 
+    <script src="./scripts/api/photographersApi.js"></script>
+    <script src="./js/factories/mediaFactory.js"></script>
+    <script src="./scripts/utils/handleLikes.js"></script>
+    <script src="./scripts/utils/totalLikeAndPrice.js"></script>
+    <script src="./scripts/utils/modal.js"></script>
+    <script src="./scripts/utils/modalData.js"></script>
+    <script src="./scripts/utils/filterMedia.js"></script>
+    <script src="./scripts/utils/mediaBox.js"></script>
+    <script src="./scripts/utils/dropdown.js"></script>
+    <script src="./js/factories/photographDetail.js"></script>
 
-
-  <script src="./scripts/api/photographersApi.js"></script>
-  <script src="./js/factories/mediaFactory.js"></script>
-  <script src="./scripts/utils/handleLikes.js"></script>
-  <script src="./scripts/utils/totalLikeAndPrice.js"></script>
-  <script src="./scripts/utils/modal.js"></script>
-  <script src="./scripts/utils/modalData.js"></script>
-  <script src="./scripts/utils/filterMedia.js"></script>
-  <script src="./scripts/utils/mediaBox.js"></script>
-  <script src="./scripts/utils/dropdown.js"></script>
-  <script src="./js/factories/photographDetail.js"></script>
-
-  <script src="./scripts/pages/photographerDetail.js"></script>
-</body>
-
+    <script src="./scripts/pages/photographerDetail.js"></script>
+  </body>
 </html>
