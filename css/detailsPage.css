@@ -451,7 +451,6 @@ label {
   position: relative;
   animation: openmodal 500ms 0ms both;
   transition: transform 330ms ease-in-out;
-  overflow: scroll;
 }
 
 @keyframes openmodal {
