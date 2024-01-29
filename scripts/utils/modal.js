@@ -45,35 +45,39 @@ const checkInput = (input, min, max, isEmail = false) => {
   // Initialize validity flag
   let valid = false;
   // Check if input is required and is of valid length or is a valid email
-  if (!isRequired(value)) {
-    // If input is not required, set error message and make it visible
-    errorElement.setAttribute("data-error", "Ce champ ne peut pas etre vide !");
-    errorElement.setAttribute("data-error-visible", true);
-  } else if (
-    isEmail ? !isEmailValid(value) : !isBetween(value.length, min, max)
-  ) {
-    if (name === "first" || name === "last") {
+  switch (true) {
+    case !isRequired(value):
+      // If input is not required, set error message and make it visible
+      errorElement.setAttribute(
+        "data-error",
+        "Ce champ ne peut pas etre vide !"
+      );
+      errorElement.setAttribute("data-error-visible", true);
+      break;
+    case isEmail ? !isEmailValid(value) : !isBetween(value.length, min, max):
+      if (name === "first" || name === "last") {
+        valid = true;
+        return;
+      }
+      // If input is not valid, set error message and make it visible
+      errorElement.setAttribute(
+        "data-error",
+        isEmail
+          ? "Veuillez entrer un format correct!"
+          : "ce champ doit contenir minimum 2 characteres !"
+      );
+      errorElement.setAttribute("data-error-visible", true);
+      break;
+    default:
+      // If input is valid, remove error message and hide it
+      if (errorElement && errorElement.hasAttribute("data-error")) {
+        errorElement.removeAttribute("data-error");
+      }
+      if (errorElement && errorElement.hasAttribute("data-error-visible")) {
+        errorElement.removeAttribute("data-error-visible");
+      }
+      // Set validity flag to true
       valid = true;
-      return;
-    }
-    // If input is not valid, set error message and make it visible
-    errorElement.setAttribute(
-      "data-error",
-      isEmail
-        ? "Veuillez entrer un format correct!"
-        : "ce champ doit contenir minimum 2 characteres !"
-    );
-    errorElement.setAttribute("data-error-visible", true);
-  } else {
-    // If input is valid, remove error message and hide it
-    if (errorElement && errorElement.hasAttribute("data-error")) {
-      errorElement.removeAttribute("data-error");
-    }
-    if (errorElement && errorElement.hasAttribute("data-error-visible")) {
-      errorElement.removeAttribute("data-error-visible");
-    }
-    // Set validity flag to true
-    valid = true;
   }
 
   // Return validity flag
@@ -84,6 +88,12 @@ const checkInput = (input, min, max, isEmail = false) => {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
+  const modalData = {
+    first: "",
+    last: "",
+    email: "",
+    message: "",
+  };
   // Check if all input fields are valid
   let isFormValid = Array.from(form).every((input) =>
     checkInput(input, 2, 25, input.name === "email")
@@ -91,6 +101,14 @@ form.addEventListener("submit", function (e) {
 
   // If form is valid, hide the form and display a confirmation message
   if (isFormValid) {
+    // Capture form data
+    const formData = new FormData(form);
+    for (let key in modalData) {
+      modalData[key] = formData.get(key);
+    }
+
+    // Log form data in console
+    console.log("form data: ", modalData);
     form.style.display = "none";
 
     const msg = document.getElementById("confirmation__msg");
